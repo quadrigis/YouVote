@@ -1,0 +1,1 @@
+"lib\MigSharp\Migrate.exe" youvote YouVote.Migrations\bin\Debug\YouVote.Migrations.dll -provider SqlServer2012 -traceLevel: Information -to %1

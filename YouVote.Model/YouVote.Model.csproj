@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{006819FA-FAD7-4A0E-B344-985C6FB46614}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YouVote.Model</RootNamespace>
+    <AssemblyName>YouVote.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\lib\Windsor\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\lib\Windsor\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\nHibernate\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\nHibernate\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\nHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Audyt\Auditable.cs" />
+    <Compile Include="Domain\Audyt\AuditListener.cs" />
+    <Compile Include="Domain\Audyt\AudytLog.cs" />
+    <Compile Include="Domain\Audyt\AudytLogItem.cs" />
+    <Compile Include="Domain\Audyt\AudytLogMap.cs" />
+    <Compile Include="Domain\Audyt\AudytLogType.cs" />
+    <Compile Include="Domain\Audyt\IAuditable.cs" />
+    <Compile Include="Domain\Language\ILanguageRepository.cs" />
+    <Compile Include="Domain\Language\Language.cs" />
+    <Compile Include="Domain\Language\LanguageMap.cs" />
+    <Compile Include="Domain\Language\LanguageRepository.cs" />
+    <Compile Include="Domain\Dictionary\Dictionaris.cs" />
+    <Compile Include="Domain\Dictionary\DictionarisMap.cs" />
+    <Compile Include="Domain\Dictionary\DictionariyMap.cs" />
+    <Compile Include="Domain\Dictionary\DictionariyRepository.cs" />
+    <Compile Include="Domain\Dictionary\DictionariyTyp.cs" />
+    <Compile Include="Domain\Dictionary\DictionariyTypMap.cs" />
+    <Compile Include="Domain\Dictionary\DictionariyTypRepository.cs" />
+    <Compile Include="Domain\Dictionary\Dictionary.cs" />
+    <Compile Include="Domain\Dictionary\DictionaryDataObject.cs" />
+    <Compile Include="Domain\Dictionary\IDictionaryDataObject.cs" />
+    <Compile Include="Domain\Dictionary\IDictionaryRepository.cs" />
+    <Compile Include="Domain\Dictionary\IDictionaryTypRepository.cs" />
+    <Compile Include="Domain\User\IUserRepository.cs" />
+    <Compile Include="Domain\User\User.cs" />
+    <Compile Include="Domain\User\UserMap.cs" />
+    <Compile Include="Domain\User\UserRepository.cs" />
+    <Compile Include="Domain\Role\IRoleRepository.cs" />
+    <Compile Include="Domain\Role\Role.cs" />
+    <Compile Include="Domain\Role\RoleMap.cs" />
+    <Compile Include="Domain\Role\RoleRepository.cs" />
+    <Compile Include="Domain\Permission\IPermissionRepository.cs" />
+    <Compile Include="Domain\Permission\Permission.cs" />
+    <Compile Include="Domain\Permission\PermissionMap.cs" />
+    <Compile Include="Domain\Permission\PermissionRepository.cs" />
+    <Compile Include="NhConfig.cs" />
+    <Compile Include="Plugin\Ioc\CommonInstaller.cs" />
+    <Compile Include="Plugin\Ioc\InstallerRepository.cs" />
+    <Compile Include="Plugin\Mail\IMail.cs" />
+    <Compile Include="Plugin\Mail\Mail.cs" />
+    <Compile Include="Plugin\DbResult.cs" />
+    <Compile Include="Plugin\Security\Hash.cs" />
+    <Compile Include="Plugin\Security\PasswordGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\YouVote.Common\YouVote.Common.csproj">
+      <Project>{B6F21EF0-04BA-4547-8FCC-70D61ABB4C35}</Project>
+      <Name>YouVote.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

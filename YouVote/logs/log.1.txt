@@ -1,0 +1,131 @@
+2013-09-13 13:54:36.1878		INFO	YouVote.MvcApplication	Start	
+2013-09-13 13:56:52.9168		ERROR	YouVote.MvcApplication		System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'NHibernate.LoggerProvider' threw an exception. ---> System.ApplicationException: Unable to instantiate:  ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: type
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at NHibernate.LoggerProvider.GetLoggerFactory(String nhibernateLoggerClass)
+   --- End of inner exception stack trace ---
+   at NHibernate.LoggerProvider.GetLoggerFactory(String nhibernateLoggerClass)
+   at NHibernate.LoggerProvider..cctor()
+   --- End of inner exception stack trace ---
+   at NHibernate.LoggerProvider.LoggerFor(Type type)
+   at NHibernate.Cfg.Configuration..cctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeFieldHandle.GetValue(RtFieldInfo field, Object instance, RuntimeType fieldType, RuntimeType declaringType, Boolean& domainInitialized)
+   at System.Reflection.RtFieldInfo.UnsafeGetValue(Object obj)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at HibernatingRhinos.Profiler.Appender.NHibernate3Logger.WrapNHibernateLogger.GetOriginalLoggerFactory()
+   at HibernatingRhinos.Profiler.Appender.NHibernate3Logger.WrapNHibernateLogger.Initialize()
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.RegisterAppenderUsingNHibernateLogger()
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.WrapLogger()
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.StartNHibernateProfiling()
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize(NHibernateAppenderConfiguration configuration)
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize()
+   at YouVote.MvcApplication.Application_Start() in D:\OpenSky\Priv\YouVote\YouVote\Global.asax.cs:line 63
+2013-09-13 14:09:58.7138		INFO	YouVote.MvcApplication	Start	
+2013-09-13 14:11:13.5358		ERROR	YouVote.MvcApplication		System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'NHibernate.LoggerProvider' threw an exception. ---> System.ApplicationException: Unable to instantiate:  ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: type
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at NHibernate.LoggerProvider.GetLoggerFactory(String nhibernateLoggerClass)
+   --- End of inner exception stack trace ---
+   at NHibernate.LoggerProvider.GetLoggerFactory(String nhibernateLoggerClass)
+   at NHibernate.LoggerProvider..cctor()
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.RuntimeFieldHandle.GetValue(RtFieldInfo field, Object instance, RuntimeType fieldType, RuntimeType declaringType, Boolean& domainInitialized)
+   at System.Reflection.RtFieldInfo.UnsafeGetValue(Object obj)
+   at System.Reflection.RtFieldInfo.InternalGetValue(Object obj, StackCrawlMark& stackMark)
+   at System.Reflection.RtFieldInfo.GetValue(Object obj)
+   at HibernatingRhinos.Profiler.Appender.NHibernate3Logger.WrapNHibernateLogger.GetOriginalLoggerFactory()
+   at HibernatingRhinos.Profiler.Appender.NHibernate3Logger.WrapNHibernateLogger.Initialize()
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.RegisterAppenderUsingNHibernateLogger()
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.WrapLogger()
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.StartNHibernateProfiling()
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize(NHibernateAppenderConfiguration configuration)
+   at HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize()
+   at YouVote.MvcApplication.Application_Start() in D:\OpenSky\Priv\YouVote\YouVote\Global.asax.cs:line 63
+2013-09-13 14:14:06.3288		INFO	YouVote.MvcApplication	Start	
+2013-09-13 14:16:45.9928		INFO	YouVote.MvcApplication	Start	
+2013-09-13 14:19:07.5278		ERROR	YouVote.MvcApplication		System.Web.HttpException (0x80004005): A public action method 'Index' was not found on controller 'YouVote.Controllers.AccountController'.
+   at System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(RequestContext requestContext)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   at System.Web.Mvc.SecurityUtil.<GetCallInAppTrustThunk>b__0(Action f)
+   at System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust(Action action)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-09-13 14:19:23.4348		INFO	YouVote.MvcApplication	Start	
+2013-09-13 14:22:44.5828		INFO	YouVote.MvcApplication	Start	
+2013-09-13 14:28:45.0868		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:13:23.5198		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:21:53.6688		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:28:01.0898		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:38:56.1208		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:41:07.5548		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:42:38.1488		ERROR	YouVote.MvcApplication		System.Web.HttpException (0x80004005): A public action method 'Index' was not found on controller 'YouVote.Controllers.AccountController'.
+   at System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(RequestContext requestContext)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   at System.Web.Mvc.SecurityUtil.<GetCallInAppTrustThunk>b__0(Action f)
+   at System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust(Action action)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-09-13 16:43:10.1258		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:43:52.5678		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:45:00.5638		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:46:37.3568		ERROR	YouVote.MvcApplication		System.Web.HttpException (0x80004005): A public action method 'Index' was not found on controller 'YouVote.Controllers.AccountController'.
+   at System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(RequestContext requestContext)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   at System.Web.Mvc.SecurityUtil.<GetCallInAppTrustThunk>b__0(Action f)
+   at System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust(Action action)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-09-13 16:46:48.9928		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:48:46.2258		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:50:21.5108		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:54:08.4828		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:54:34.8528		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:55:51.0788		INFO	YouVote.MvcApplication	Start	
+2013-09-13 16:57:41.1598		INFO	YouVote.MvcApplication	Start	
+2013-09-13 17:00:36.6968		INFO	YouVote.MvcApplication	Start	
+2013-09-13 17:07:00.0478		INFO	YouVote.MvcApplication	Start	
+2013-09-13 17:13:19.1548		INFO	YouVote.MvcApplication	Start	
+2013-09-13 17:20:10.5348		INFO	YouVote.MvcApplication	Start	
+2013-09-13 17:21:50.9568		INFO	YouVote.MvcApplication	Start	

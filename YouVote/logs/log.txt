@@ -1,0 +1,49 @@
+2014-05-13 19:40:18.3427		INFO	YouVote.MvcApplication	Start	
+2014-05-13 19:40:41.0020		ERROR	YouVote.MvcApplication		FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+  * Database was not configured through Database method.
+ ---> System.Data.SqlClient.SqlException: Up³yn¹³ limit czasu po³¹czenia. Limit czasu up³yn¹³ podczas fazy wykonywania akcji po logowaniu. Limit czasu po³¹czenia móg³ up³yn¹æ podczas oczekiwania, a¿ serwer ukoñczy proces logowania i przeœle odpowiedŸ, albo podczas próby utworzenia wielu aktywnych po³¹czeñ.  Zu¿ycie czasu podczas próby nawi¹zania po³¹czenia z tym serwerem: [przed logowaniem] inicjowanie=246; uzgadnianie=7278; [logowanie] inicjowanie=0; uwierzytelnianie=0; [po logowaniu] ukoñczenie=7513;  ---> System.ComponentModel.Win32Exception: Up³yn¹³ limit czasu operacji oczekiwania
+   --- Koniec œladu stosu wyj¹tków wewnêtrznych ---
+   w System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   w System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   w System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   w System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   w System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   w System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   w System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   w System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   w System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   w System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   w System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   w System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   w System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   w System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   w System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   w System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   w System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   w System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   w System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   w System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   w System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   w System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   w System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   w System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   w System.Data.SqlClient.SqlConnection.Open()
+   w NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   w NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   w NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   w NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   w NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   w NHibernate.Cfg.Configuration.BuildSessionFactory()
+   w FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   --- Koniec œladu stosu wyj¹tków wewnêtrznych ---
+   w System.Web.HttpApplication.RegisterEventSubscriptionsWithIIS(IntPtr appContext, HttpContext context, MethodInfo[] handlers)
+   w System.Web.HttpApplication.InitSpecial(HttpApplicationState state, MethodInfo[] handlers, IntPtr appContext, HttpContext context)
+   w System.Web.HttpApplicationFactory.GetSpecialApplicationInstance(IntPtr appContext, HttpContext context)
+   w System.Web.Hosting.PipelineRuntime.InitializeApplication(IntPtr appContext)
+
+  * Database was not configured through Database method.
+
+2014-05-13 19:40:59.2361		INFO	YouVote.MvcApplication	Start	
+2014-05-13 19:59:21.9271		INFO	YouVote.MvcApplication	Start	

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Ebicom Sp. zo.o.</LicensedTo>
+    <LicenseType>Developer OEM</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>120705074634</OrderID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Words for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>d2efe077-53d3-488d-8380-93f21de84b3c</SerialNumber>
+    <SubscriptionExpiry>20130717</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>ffFNPVPJbzMi3POw+Gc+4dmss7QjBrmmUQVMztF26YahXdybyX1dpPIhGHsUJAcUAsH0RBXjIgBDhsVgYgiD2hMprkbt0PiWmUNIo8lcRwffgMEbTWhQysNkyClVD/2ZaReWvp26csO6nkOCMJpsnpYJGZcAj7L8IlfIDjtTxx8=</Signature>
+</License>

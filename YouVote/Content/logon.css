@@ -1,0 +1,8 @@
+﻿.field-validation-error {
+    color: red;
+    display: block;
+}
+
+body {
+    padding-top: 25px;
+}

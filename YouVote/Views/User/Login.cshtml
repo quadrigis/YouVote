@@ -1,0 +1,162 @@
+﻿@using YouVote.Resources.Models
+@using YouVote.Resources.Views
+@model YouVote.Models.User.UserModel
+
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouVote - @LoginRes.Login</title>
+    <link rel="stylesheet" href="~/Scripts/bootstrap/css/bootstrap.css"  media="screen" />
+    <link href="~/Scripts/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="~/Content/logon.css" />
+	<link rel="stylesheet" href="~/Scripts/jquery-switch/jquery.switchButton.css"/>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+
+        <section id="main" class="span9">
+            <h2>@LoginRes.Welcome</h2>
+            <p>@LoginRes.Informations</p>
+            
+            @Html.ActionLink("English", "ChangeCulture", "User",  
+                       new { lang = "en", returnUrl = Request.RawUrl }, null)
+            @Html.ActionLink("Polski", "ChangeCulture", "User",  
+                       new { lang = "pl", returnUrl = Request.RawUrl }, null)
+
+
+            <form id="loginForm" action="@Url.Action("Login")" method="POST">
+                <fieldset>
+                    <legend>@LoginRes.Legend1</legend>
+                    <div class="row">
+                        <div class="span3">
+                            @Html.TextBoxFor(m => m.Login.Email, new { placeholder = UserRes.Email })
+                            @Html.ValidationMessageFor(m => m.Login.Email)
+                        </div>
+                        <div class="span3">
+                            @Html.PasswordFor(m => m.Login.Password, new { placeholder = UserRes.Password })
+                            @Html.ValidationMessageFor(m => m.Login.Password)
+                        </div>
+                        <div class="span3">
+                            @Html.CheckBoxFor(m => m.Login.RememberMe)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span3" style="padding-top: 5px;">
+                            <a id="submit" class="btn btn-primary btn-large span2" >@LoginRes.Login</a>
+                        </div>
+                        <div class="span3" style="padding-top: 20px;">
+                            @Html.ActionLink(LoginRes.Forgot, "Register", "User")
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <form id="registerForm" action="@Url.Action("Register")" method="POST">
+                <fieldset>
+                    <legend>@LoginRes.Legend2</legend>
+                    <div class="row">
+                        <div class="span3">
+                            @Html.TextBoxFor(m => m.Email, new { placeholder = UserRes.Email })
+                            @Html.ValidationMessageFor(m => m.Email)
+                        </div>
+                        <div class="span3">
+                            @Html.PasswordFor(m => m.Password, new { placeholder = UserRes.Password })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                        <div class="span3">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = UserRes.ConfirmPassword })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span3" style="padding-top: 5px;">
+                            <a id="register" class="btn btn-info span2" >@LoginRes.Register</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <footer>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-switch/jquery.switchButton.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @Html.Partial("_jsPlugins")
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$.validator.unobtrusive.parse('#loginForm');
+
+            $('#submit').click(function () {
+                if (!$('#loginForm').valid()) {
+                    return;
+                }
+                $.ajax({
+                    data: {
+                        Email: $('#Login_Email').val(),
+                        Password: $('#Login_Password').val(),
+                        RememberMe: $('#Login_RememberMe')[0].checked,
+                        returnUrl: '@Request.QueryString["ReturnUrl"]'
+                    },
+                    url: '@Url.Action("Login")',
+                    type: "POST",
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.Success) {
+                            window.location = data.ReturnUrl;
+                        }
+                        plugins.showAlert(data.Message, data.Type);
+                    }
+                });
+            });
+
+            $('#register').click(function () {
+                if (!$('#registerForm').valid()) {
+                    return;
+                }
+                $.ajax({
+                    data: {
+                        Email: $('#Email').val(),
+                        Password: $('#Password').val(),
+                        ConfirmPassword: $('#ConfirmPassword').val(),
+                        returnUrl: '@Request.QueryString["ReturnUrl"]'
+                    },
+                    url: '@Url.Action("Register")',
+                    type: "POST",
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.Success) {
+                            window.location = data.ReturnUrl;
+                        }
+                        plugins.showAlert(data.Message, data.Type);
+                    }
+                });
+            });
+
+            $('#Login_RememberMe').switchButton({
+                width: 150,
+                height: 28,
+                button_width: 100,
+                labels_placement: "right",
+                on_label: '@LoginRes.Yes',
+                off_label: '@LoginRes.No',
+                insideText: "@UserRes.RememberMe"
+            });
+        });
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouVote - @ViewBag.Title</title>
+	<link rel="stylesheet" href="~/Scripts/bootstrap/css/bootstrap.css"  media="screen" />
+	<link rel="stylesheet" href="~/Content/logon.css" />
+	<link rel="stylesheet" href="~/Scripts/jquery-switch/jquery.switchButton.css"/>
+</head>
+<body>
+    <div>
+        <header>
+            <div id="title">
+                <h1>My MVC Application</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Main")</li>
+                    <li>@Html.ActionLink("About", "About", "Main")</li>
+                </ul>
+            </nav>
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+        </footer>
+    </div>
+
+    @* <script type="text/javascript" src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/s1")"></script>*@
+    
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-switch/jquery.switchButton.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    @Html.Partial("_jsPlugins")
+    @RenderSection("scripts", false)
+</body>
+</html>

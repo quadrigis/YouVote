@@ -1,0 +1,78 @@
+﻿@using YouVote.Resources.Models
+
+<script type="text/javascript">
+    var urls = {
+        logoff: '@Url.Action("LogOff", "User")',
+        login: '@Url.Action("Login", "User")'
+    };
+
+    var resources = {
+        ForeginKeyError:	'@ValidRes.ForeginKeyError',
+        GeneralError:       '@ValidRes.GeneralError',
+        PleaseWait:         '@ValidRes.PleaseWait'
+    };
+
+    var plugins = (function () {
+        var counter = 0;
+        var max = 3;
+
+        return {
+            showAlert: function (message, type, selector) {
+                if (message === undefined) {
+                    message = 'Error';
+                }
+                var typeString = '';
+                switch (type) {
+                    case 1:
+                        typeString = 'error';
+                        break;
+                    case 2:
+                        typeString = 'info';
+                        break;
+                    case 3:
+                        typeString = 'success';
+                        break;
+                    default:
+                        typeString = 'error';
+                        break;
+                }
+                if (selector === undefined) {
+                    selector = 'header';
+                }
+
+                if (counter >= max) {
+                    counter = 0;
+                    $('#message_' + counter).remove();
+                }
+
+                var div = '<div id="message_' + counter + '" class="alert alert-' + typeString + '"><button type="button" class="close" data-dismiss="alert">&times;</button>' + message + '</div>';
+                $(selector).append(div);
+                $('#message_' + counter).delay(10000).fadeOut(300, function () {
+                    $(this).remove();
+                });
+                counter++;
+
+            }
+        };
+    })();
+
+    $(document).ready(function () {
+        $(document).ajaxStart(function () {
+            $.blockUI({ message: resources.PleaseWait + '...' });
+        });
+
+        $(document).ajaxStop(function () {
+            $.unblockUI();
+        });
+
+        $(document).ajaxError(function (e, request) {
+            if (request.status == 403) {
+                window.location = urls.login;
+            } else if (request.status == 666) {
+                plugins.showAlert(request.statusText, false);
+            } else if (request.status != 0) {
+                plugins.showAlert(resources.GeneralError, false);
+            }
+        });
+    });
+ </script>
